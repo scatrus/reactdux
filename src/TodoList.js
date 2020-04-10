@@ -3,6 +3,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 import * as todoActions from './actions/todos'
+import './styles.css'
 
 class TodoList extends Component {
 
@@ -18,7 +19,8 @@ class TodoList extends Component {
             this.props.addTodo(this.state.newTodoText)
             this.setState({newTodoText:''})
         }
-    
+
+           
 
     render() {
         return (
@@ -26,9 +28,11 @@ class TodoList extends Component {
 
                 <ul>
                    {this.props.todos.map(todo=>(
-                       <li key={todo.id}>{todo.text}</li>
-                   )
+                       <li key={todo.id}>{todo.text}
+                       </li>
+                    )
                    ) }
+                   
                 </ul>
 
                 <input
@@ -39,6 +43,7 @@ class TodoList extends Component {
                 }
                  />
                 <button onClick={this.addNewTodo}>Novo Item</button>
+                
             </div>
         );
 
